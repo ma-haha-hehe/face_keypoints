@@ -22,7 +22,7 @@ ax.scatter(preds[:,0], preds[:,1], marker='+', c='r')
 plt.show()
 
 #3D
-fa = face_alignment.FaceAlignment(face_alignment.LandmarksType.THREE_D, flip_input=False)
+fa = face_alignment.FaceAlignment(face_alignment.LandmarksType.THREE_D, flip_input=False,device='cpu')
 im = cv2.imread(file)
 input = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
 preds = fa.get_landmarks(input)[0]
